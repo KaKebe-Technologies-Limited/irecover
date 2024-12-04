@@ -32,11 +32,26 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $stmt = $conn->prepare("INSERT INTO documents (document_type, id_number, id_name, dob, document_photo, phone_number, email) VALUES (?, ?, ?, ?, ?, ?, ?)");
     $stmt->bind_param("sssssss", $documentType, $idNumber, $idName, $dob, $documentPhotoPath, $phoneNumber, $email);
 
-    if ($stmt->execute()) {
-        echo " Data submitted successfully! ";
-    } else {
-        echo "Error: " . $stmt->error;
-    }
+    <?php
+        // Assuming the database operation is done, and $stmt is your prepared statement
+        if ($stmt->execute()) {
+            $message = "Data submitted successfully!";
+            $redirect = true; // Flag to trigger redirection
+        } else {
+            $message = "Error: " . $stmt->error;
+            $redirect = false; // No redirection
+        }
+
+        // Output the message
+        echo $message;
+
+        // Wait for 4 seconds before redirecting
+        if ($redirect) {
+            // Redirect after 4 seconds
+            header("refresh:4; url=index.php");
+        }
+        ?>
+
 
     // Close connection
     $stmt->close();
