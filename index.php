@@ -55,15 +55,15 @@
 
   <div class="container my-5">
     <div class="row g-4">
-      <!-- First Accordion -->
-      <form action="submit_id.php" method="POST" enctype="multipart/form-data">
+
+    <form action="submit_id.php" method="POST" enctype="multipart/form-data">
         <div class="col-md-6">
-          <h4 class="mb-3 text-primary">Submit Lost Documents</h4>
+          <h4 class="mb-3 text-primary">Report Lost Document</h4>
           <div class="accordion" id="accordionOne">
             <div class="accordion-item">
               <h2 class="accordion-header" id="headingOne">
                 <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                  Click to submit
+                  Click to Report
                 </button>
               </h2>
               <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionOne">
@@ -90,7 +90,60 @@
                     <input type="date" name="dob" class="form-control" id="dob" required>
                   </div>
                   <div class="mb-3">
-                    <label for="documentPhoto" class="form-label">Upload a photo of Document</label>
+                    <label for="documentPhoto" class="form-label">Upload a photo of Lost Document</label>
+                    <input type="file" name="documentPhoto" class="form-control" id="documentPhoto" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="phoneNumber" class="form-label">Phone Number</label>
+                    <input type="tel" name="phoneNumber" class="form-control" id="phoneNumber" placeholder="Enter Phone Number" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="images" class="form-label">Image of Lost Document</label>
+                    <input type="submit" name="email" class="form-control" id="email" placeholder="Enter Email" required>
+                  </div>
+                  <button type="submit" class="btn btn-primary w-100">Submit</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </form>
+      <!-- Second Accordion -->
+      <form action="submit_id.php" method="POST" enctype="multipart/form-data">
+        <div class="col-md-6">
+          <h4 class="mb-3 text-primary">Submit Lost Documents</h4>
+          <div class="accordion" id="accordionTwo">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  Click to submit
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne" data-bs-parent="#accordionOne">
+                <div class="accordion-body">
+                  <div class="mb-3">
+                    <label for="documentType" class="form-label">Document Type</label>
+                    <select id="documentType" name="documentType" class="form-select" required>
+                      <option value="academicDocument">Academic Document</option>
+                      <option value="drivingPermit">Driving Permit</option>
+                      <option value="nationalID">National ID</option>
+                      <option value="studentID">Student ID</option>
+                    </select>
+                  </div>
+                  <div class="mb-3">
+                    <label for="idNumber" class="form-label">ID Number</label>
+                    <input type="text" name="idNumber" class="form-control" id="idNumber" placeholder="Enter ID Number" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="documentPhoto" class="form-label">Upload a photo of Lost Document</label>
+                    <input type="file" name="documentPhoto" class="form-control" id="documentPhoto" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="dob" class="form-label">Date of Birth</label>
+                    <input type="date" name="dob" class="form-control" id="dob" required>
+                  </div>
+                  <div class="mb-3">
+                    <label for="documentPhoto" class="form-label">Upload a photo of Found Document</label>
                     <input type="file" name="documentPhoto" class="form-control" id="documentPhoto" required>
                   </div>
                   <div class="mb-3">
@@ -109,10 +162,10 @@
         </div>
       </form>
 
-      <!-- Second Accordion -->
+      <!-- Third Accordion -->
       <div class="col-md-6">
         <h4 class="mb-3 text-primary">Search Found Documents</h4>
-        <div class="accordion" id="accordionTwo">
+        <div class="accordion" id="accordionThree">
           <div class="accordion-item">
             <h2 class="accordion-header" id="headingTwo">
               <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
